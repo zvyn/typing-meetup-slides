@@ -17,5 +17,9 @@ setup(
     name="typing_meetup",
     packages=find_packages(include=["typing_meetup", "typing_meetup.*"]),
     zip_safe=False,
-    install_requires=[],
+    install_requires=[
+        "fastapi",
+        "pydantic[email]",
+        "uvicorn",
+    ],
 )
