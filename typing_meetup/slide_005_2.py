@@ -1,11 +1,11 @@
-"""Poor mans cut"""
+"""Poor mans cat"""
 
 import sys
 from typing import Protocol, Any, runtime_checkable
 
 
 class SupportsReadline(Protocol):
-    def readline(self) -> str:
+    def readline(self) -> str | None:
         ...  # <- the dots are part of the syntax!
 
 
@@ -15,7 +15,7 @@ class SupportsWrite(Protocol):
         ...
 
 
-def cut(
+def cat(
     input_file: SupportsReadline = sys.stdin,
     output_file: SupportsWrite = sys.stdout,
     end: str = "",
@@ -31,10 +31,11 @@ class Screemer:
     def __init__(self, input_file=sys.stdin):
         self.input_file = input_file
 
-    def readline(self):
+    def readline(self) -> str | None:
         while line := self.input_file.readline():
             return line.upper()
+        return None
 
 
 if __name__ == "__main__":
-    cut(Screemer())
+    cat(Screemer())

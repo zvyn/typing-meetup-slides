@@ -1,7 +1,12 @@
 Welcome!
 ========
 
-TODO: Meetup Generics
+Meetup Generics
+
+- Anyone looking for a job?
+- Other community events you want to share?
+  - EuroSciPy: https://www.euroscipy.org/2022/
+  - Meetup: Functional Programming Freibrug
 
 
 About me

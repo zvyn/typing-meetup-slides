@@ -1,9 +1,9 @@
-"""Poor mans cut"""
+"""Poor mans cat"""
 
 import sys
 
 
-def cut(input_file=sys.stdin, output_file=sys.stdout, end=""):
+def cat(input_file=sys.stdin, output_file=sys.stdout, end=""):
     while line := input_file.readline():
         print(line, end=end, file=output_file)
 
@@ -18,4 +18,4 @@ class Screemer:
 
 
 if __name__ == "__main__":
-    cut(Screemer())
+    cat(Screemer())

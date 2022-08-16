@@ -16,33 +16,37 @@ endif
 badd +44 typing_meetup/api_final.py
 badd +24 setup.py
 badd +49 term://~/Code/typing-meetup//585084:fish
-badd +1 slides/001_aboutme.md
+badd +9 slides/001_aboutme.md
 badd +1 slides/002_types.md
 badd +1 term://~/Code/typing-meetup//589449:fish
 badd +19 term://~/Code/typing-meetup//589623:fish
-badd +1 typing_meetup/slide_002.py
+badd +8 typing_meetup/slide_002.py
 badd +1 slides/003_annotations.md
 badd +1 term://~/Code/typing-meetup//593352:ipython
 badd +1 typing_meetup/slide_001.py
 badd +1 slides/003_types.md
-badd +23 typing_meetup/slide_003.py
-badd +1 slides/004_annotations.md
+badd +21 typing_meetup/slide_003.py
+badd +22 slides/004_annotations.md
 badd +1 slides/002_motivation.md
-badd +27 typing_meetup/slide_004.py
+badd +15 typing_meetup/slide_004.py
 badd +1 slides/005_library_functions.py
-badd +13 slides/005_library_functions.md
-badd +15 typing_meetup/slide_005.py
+badd +20 slides/005_library_functions.md
+badd +21 typing_meetup/slide_005.py
 badd +14 term://~/Code/typing-meetup//600107:fish
-badd +30 typing_meetup/slide_005_2.py
+badd +8 typing_meetup/slide_005_2.py
 badd +23 term://~/Code/typing-meetup//603480:fish
-badd +1 slides/006_json_api.md
+badd +8 slides/006_json_api.md
 badd +3 typing_meetup/slide_006.py
-badd +1 slides/007_typed_dict.md
-badd +14 typing_meetup/slide_007.py
+badd +19 slides/007_typed_dict.md
+badd +32 typing_meetup/slide_007.py
 badd +1 term://~/Code/typing-meetup//608380:fish
-badd +1 slides/008_lessons.md
+badd +16 slides/008_lessons.md
 badd +14 typing_meetup/slide_008.py
-badd +58 ../tralis/tralis-core/tralis_core/api_models.py
+badd +35 ../tralis/tralis-core/tralis_core/api_models.py
+badd +1 ../tralis/tralis-worker/tralis_worker/views/livemap.py
+badd +4 /tmp/t.py
+badd +29 ../tralis/tralis-worker/tralis_worker/trains/train.py
+badd +1 ../tralis/tralis-api/tralis_api/tracker_rest_api.py
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -71,8 +75,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 90 + 79) / 158)
+exe '2resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 67 + 79) / 158)
 argglobal
 balt typing_meetup/slide_001.py
 setlocal fdm=manual
@@ -85,12 +91,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 16 - ((15 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 08|
+keepjumps 16
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("typing_meetup/slide_001.py", ":p")) | buffer typing_meetup/slide_001.py | else | edit typing_meetup/slide_001.py | endif
@@ -108,15 +114,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 020|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 90 + 79) / 158)
+exe '2resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 67 + 79) / 158)
 tabnext
 edit slides/002_motivation.md
 let s:save_splitbelow = &splitbelow
@@ -135,8 +143,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 68 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 89 + 79) / 158)
 argglobal
 balt typing_meetup/slide_002.py
 setlocal fdm=manual
@@ -149,7 +157,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -172,15 +180,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 23) / 46)
+let s:l = 8 - ((7 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 019|
+keepjumps 8
+normal! 026|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 68 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 89 + 79) / 158)
 tabnext
 edit slides/003_types.md
 let s:save_splitbelow = &splitbelow
@@ -199,8 +207,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 90 + 79) / 158)
+exe '2resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 67 + 79) / 158)
 argglobal
 balt slides/002_types.md
 setlocal fdm=manual
@@ -213,7 +223,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -236,15 +246,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 23 - ((22 * winheight(0) + 23) / 46)
+let s:l = 10 - ((9 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 23
-normal! 018|
+keepjumps 10
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 90 + 79) / 158)
+exe '2resize ' . ((&lines * 32 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 67 + 79) / 158)
 tabnext
 edit slides/004_annotations.md
 let s:save_splitbelow = &splitbelow
@@ -263,8 +275,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 78 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
 argglobal
 balt typing_meetup/slide_004.py
 setlocal fdm=manual
@@ -277,12 +289,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 22 - ((21 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 06|
+keepjumps 22
+normal! 018|
 wincmd w
 argglobal
 if bufexists(fnamemodify("typing_meetup/slide_004.py", ":p")) | buffer typing_meetup/slide_004.py | else | edit typing_meetup/slide_004.py | endif
@@ -300,15 +312,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 27 - ((26 * winheight(0) + 23) / 46)
+let s:l = 20 - ((19 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
-normal! 034|
+keepjumps 20
+normal! 018|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 78 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
 tabnext
 edit slides/005_library_functions.md
 let s:save_splitbelow = &splitbelow
@@ -331,11 +343,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 36 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe '2resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 3resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 33 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 7 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 balt term://~/Code/typing-meetup//600107:fish
 setlocal fdm=manual
@@ -348,11 +360,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 25 - ((0 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 25
 normal! 0
 wincmd w
 argglobal
@@ -369,11 +381,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 9 - ((8 * winheight(0) + 4) / 9)
+let s:l = 6 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
+keepjumps 6
 normal! 0
 wincmd w
 argglobal
@@ -392,18 +404,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 23) / 46)
+let s:l = 18 - ((17 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
-normal! 07|
+keepjumps 18
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 36 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe '2resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 3resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 33 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 7 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 tabnext
 edit slides/005_library_functions.md
 let s:save_splitbelow = &splitbelow
@@ -426,11 +438,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 36 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe '2resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 3resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 31 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 9 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 balt typing_meetup/slide_005_2.py
 setlocal fdm=manual
@@ -443,11 +455,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 13 - ((12 * winheight(0) + 18) / 36)
+let s:l = 20 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
+keepjumps 20
 normal! 0
 wincmd w
 argglobal
@@ -464,11 +476,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 4) / 9)
+let s:l = 6 - ((0 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 6
 normal! 0
 wincmd w
 argglobal
@@ -487,18 +499,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 30 - ((29 * winheight(0) + 23) / 46)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 30
-normal! 07|
+keepjumps 1
+normal! 032|
 wincmd w
-exe '1resize ' . ((&lines * 36 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe '2resize ' . ((&lines * 9 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 3resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 31 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 9 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 tabnext
 edit slides/006_json_api.md
 let s:save_splitbelow = &splitbelow
@@ -517,8 +529,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 balt typing_meetup/slide_006.py
 setlocal fdm=manual
@@ -531,11 +543,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 18 - ((17 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 18
 normal! 0
 wincmd w
 argglobal
@@ -554,15 +566,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((11 * winheight(0) + 23) / 46)
+let s:l = 21 - ((20 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 075|
+keepjumps 21
+normal! 09|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
 tabnext
 edit slides/007_typed_dict.md
 let s:save_splitbelow = &splitbelow
@@ -585,11 +597,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 35 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe '2resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 3resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 26 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 14 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 balt term://~/Code/typing-meetup//608380:fish
 setlocal fdm=manual
@@ -602,12 +614,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
+let s:l = 19 - ((18 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 19
+normal! 060|
 wincmd w
 argglobal
 if bufexists(fnamemodify("term://~/Code/typing-meetup//608380:fish", ":p")) | buffer term://~/Code/typing-meetup//608380:fish | else | edit term://~/Code/typing-meetup//608380:fish | endif
@@ -623,19 +635,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 10 - ((9 * winheight(0) + 5) / 10)
+let s:l = 14 - ((13 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
+keepjumps 14
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("typing_meetup/slide_007.py", ":p")) | buffer typing_meetup/slide_007.py | else | edit typing_meetup/slide_007.py | endif
+if bufexists(fnamemodify("../tralis/tralis-worker/tralis_worker/views/livemap.py", ":p")) | buffer ../tralis/tralis-worker/tralis_worker/views/livemap.py | else | edit ../tralis/tralis-worker/tralis_worker/views/livemap.py | endif
 if &buftype ==# 'terminal'
-  silent file typing_meetup/slide_007.py
+  silent file ../tralis/tralis-worker/tralis_worker/views/livemap.py
 endif
-balt typing_meetup/api_final.py
+balt typing_meetup/slide_007.py
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -646,18 +658,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 46 - ((45 * winheight(0) + 23) / 46)
+let s:l = 587 - ((23 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 46
-normal! 0
+keepjumps 587
+normal! 041|
 wincmd w
-exe '1resize ' . ((&lines * 35 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe '2resize ' . ((&lines * 10 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 3resize ' . ((&columns * 94 + 95) / 190)
+exe '1resize ' . ((&lines * 26 + 22) / 44)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 14 + 22) / 44)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 tabnext
 edit slides/008_lessons.md
 let s:save_splitbelow = &splitbelow
@@ -676,10 +688,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
 argglobal
-balt typing_meetup/slide_008.py
+balt /tmp/t.py
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -690,19 +702,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+let s:l = 16 - ((15 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 010|
+keepjumps 16
+normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("../tralis/tralis-core/tralis_core/api_models.py", ":p")) | buffer ../tralis/tralis-core/tralis_core/api_models.py | else | edit ../tralis/tralis-core/tralis_core/api_models.py | endif
+if bufexists(fnamemodify("../tralis/tralis-api/tralis_api/tracker_rest_api.py", ":p")) | buffer ../tralis/tralis-api/tralis_api/tracker_rest_api.py | else | edit ../tralis/tralis-api/tralis_api/tracker_rest_api.py | endif
 if &buftype ==# 'terminal'
-  silent file ../tralis/tralis-core/tralis_core/api_models.py
+  silent file ../tralis/tralis-api/tralis_api/tracker_rest_api.py
 endif
-balt typing_meetup/slide_008.py
+balt ../tralis/tralis-core/tralis_core/api_models.py
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -713,15 +725,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 46 - ((45 * winheight(0) + 23) / 46)
+let s:l = 208 - ((23 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 46
-normal! 019|
+keepjumps 208
+normal! 022|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
 tabnext 4
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -737,7 +749,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

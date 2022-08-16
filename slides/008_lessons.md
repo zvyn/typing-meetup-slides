@@ -4,7 +4,7 @@ Take aways
 1. Start with annotating your APIs:
    Libraries used in a lot of modules and network API output
 2. Use `Protocols` instead of requiering complex objects in reusable code
-3. When pydantics `BaseModel` the feasable consider `TypedDict` for your JSON APIs
+3. When pydantics `BaseModel` is not feasable consider `TypedDict` for your JSON APIs
 
 
 Lessons Learned
